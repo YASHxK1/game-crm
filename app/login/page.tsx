@@ -28,7 +28,7 @@ export default function LoginPage() {
           <Input name="password" type="password" placeholder="Password" required />
           <Button type="submit" className="w-full">Sign in</Button>
         </form>
-        <p className="mt-3 text-xs text-zinc-500">Default seed: owner@parlour.local / Owner@123</p>
+        <p className="mt-3 text-xs text-zinc-400">Default seed: owner@parlour.local / Owner@123</p>
       </Card>
     </div>
   );

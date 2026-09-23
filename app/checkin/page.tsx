@@ -43,12 +43,12 @@ export default async function CheckinPage({ searchParams }: { searchParams: Prom
           "use server";
           await checkIn(c.id, String(f.get(`st-${c.id}`) ?? "General"));
         }} className="flex gap-1">
-          <select name={`st-${c.id}`} className="border rounded px-1 py-1 text-sm">
+          <select name={`st-${c.id}`} className="rounded-md border border-zinc-700 bg-zinc-900 px-1 py-1 text-sm text-white">
             {rates.map((r) => <option key={r.id} value={r.label}>{r.label} ₹{r.pricePerHour}/h</option>)}
           </select>
           <Button type="submit">In</Button>
         </form>,
-        <span key="t" className="text-xs text-zinc-500">{(c.tags as string[]).join(", ")}</span>,
+        <span key="t" className="text-xs text-zinc-400">{(c.tags as string[]).join(", ")}</span>,
       ])} />
       <h2 className="font-bold">Open visits ({open.length})</h2>
       <Table headers={["Check-in", "Station", "Customer"]} rows={open.map((v) => [

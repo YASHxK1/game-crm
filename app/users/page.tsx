@@ -18,7 +18,7 @@ export default async function UsersPage() {
           <Input name="name" placeholder="Name *" required />
           <Input name="email" type="email" placeholder="Email *" required />
           <Input name="password" placeholder="Password (min 6) *" required />
-          <select name="role" className="border rounded px-2 py-2"><option value="staff">staff</option><option value="admin">admin</option></select>
+          <select name="role" className="rounded-md border border-zinc-700 bg-zinc-900 px-2 py-2 text-sm text-white min-h-[44px]"><option value="staff">staff</option><option value="admin">admin</option></select>
           <Button className="sm:col-span-2">Create user</Button>
         </form>
       </Card>

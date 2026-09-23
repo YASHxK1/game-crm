@@ -24,19 +24,19 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const visible = user ? links.filter((l) => l.roles.includes(user.role)) : [];
   return (
     <html lang="en">
-      <body className="min-h-screen bg-zinc-50 text-zinc-950">
-        <header className="sticky top-0 z-10 border-b bg-white">
+      <body className="min-h-screen bg-black text-white">
+        <header className="sticky top-0 z-10 border-b border-zinc-800 bg-black">
           <div className="mx-auto flex max-w-5xl items-center gap-3 px-4 py-3">
             <a href={user ? "/checkin" : "/login"} className="font-bold">🎮 Parlour CRM</a>
             <nav className="flex flex-1 gap-1 overflow-x-auto text-sm">
               {visible.map((l) => (
-                <a key={l.href} href={l.href} className="rounded px-2 py-2 hover:bg-zinc-100 whitespace-nowrap">{l.label}</a>
+                <a key={l.href} href={l.href} className="rounded px-2 py-2 hover:bg-zinc-800 whitespace-nowrap">{l.label}</a>
               ))}
             </nav>
             {user ? (
               <form action="/api/signout" method="post">
-                <span className="mr-2 text-xs hidden sm:inline">{user.email} ({user.role})</span>
-                <button className="rounded border px-2 py-1 text-sm" formAction="/api/signout">Out</button>
+                <span className="mr-2 text-xs hidden sm:inline text-zinc-400">{user.email} ({user.role})</span>
+                <button className="rounded border border-zinc-700 px-2 py-1 text-sm" formAction="/api/signout">Out</button>
               </form>
             ) : null}
           </div>

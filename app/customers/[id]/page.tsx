@@ -33,7 +33,7 @@ export default async function CustomerDetail({ params }: { params: Promise<{ id:
           "use server";
           await sellMembership(id, String(f.get("planId")));
         }} className="mt-2 flex gap-2">
-          <select name="planId" className="border rounded px-2 py-2 text-sm">{plans.filter((p) => p.active).map((p) => <option key={p.id} value={p.id}>{p.name} ₹{p.price} / {p.validityDays}d</option>)}</select>
+          <select name="planId" className="rounded-md border border-zinc-700 bg-zinc-900 px-2 py-2 text-sm text-white">{plans.filter((p) => p.active).map((p) => <option key={p.id} value={p.id}>{p.name} ₹{p.price} / {p.validityDays}d</option>)}</select>
           <Button>Sell plan</Button>
         </form>
       </Card>

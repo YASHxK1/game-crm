@@ -19,8 +19,8 @@ export default async function PaymentsPage() {
         <p className="text-xs mb-2">Fixed rates: {rates.map((r) => `${r.label} ₹${r.pricePerHour}/h`).join(" · ")} — amount editable (manual override allowed).</p>
         <form action={recordPayment} className="grid grid-cols-2 sm:grid-cols-3 gap-2">
           <Input name="amount" type="number" step="0.01" placeholder="Amount ₹ *" required />
-          <select name="mode" className="border rounded px-2 py-2 text-sm"><option>Cash</option><option>UPI</option><option>Card</option><option>Other</option></select>
-          <select name="category" className="border rounded px-2 py-2 text-sm"><option>Session</option><option>Membership</option><option>Snacks</option><option>Other</option></select>
+          <select name="mode" className="rounded-md border border-zinc-700 bg-zinc-900 px-2 py-2 text-sm text-white"><option>Cash</option><option>UPI</option><option>Card</option><option>Other</option></select>
+          <select name="category" className="rounded-md border border-zinc-700 bg-zinc-900 px-2 py-2 text-sm text-white"><option>Session</option><option>Membership</option><option>Snacks</option><option>Other</option></select>
           <Input name="customerId" placeholder="Customer ID (optional)" />
           <Input name="visitId" placeholder="Visit ID (optional)" />
           <Button className="col-span-2 sm:col-span-1">Record</Button>
